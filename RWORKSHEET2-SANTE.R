@@ -37,7 +37,61 @@ new_age
 new_age2 <- age[12]
 new_age2
 
-#4. Create a vector using x.
-names(x) <- c("first"=3, "second"=0, "third"=9)
-names(x)
+#4. Create a vector then named the vector, names (x)
+#output: first second third
+#          3     0      9
+names <- c("first"=3, "second"=0, "third"=9)
+names
+
+#output: first third
+#          3     9
+names[c("first", "third")]
+
+#5. Create a sequence x from -3:2.
+#output: [1] 1 2 3 4 5 6
+sequence <- seq(-3:2)
+sequence
+
+#6. Create a data frame for month, price per liter (php) and purchase-quantity (liter). Write the R scripts and its output.
+#Create a data frame directly
+diesel <- data.frame(
+  Month = c("Jan", "Feb", "March", "Apr", "May", "June"),
+  Price_Per_Liter = c(52.50, 57.25, 60.00, 65.00, 74.25, 54.00),
+  Purchase_quantity = c(25, 30, 40, 50, 10, 45)
+)
+diesel
+
+#Calculate the weighted mean of fuel expenditure
+average_expenditure<- weighted.mean(diesel$Price_Per_Liter, diesel$Purchase_quantity)                                    
+
+#print the average expenditure
+average_expenditure
+
+#7. Create a vector data with 7 elements
+data <- c(length(rivers), sum(rivers), mean(rivers), median(rivers), var(rivers),
+           sd(rivers), min(rivers), max(rivers))
+data                 
+
+# The results are: [1]    141.0000  83357.0000    591.1844    425.0000 243908.4086
+#[6]    493.8708    135.0000   3710.0000
+
+#8. Create vectors according to the table.
+
+#a. Vectors using the data in the table.
+celebrities <- c("Tom Cruise", "Rolling Stone", "Oprah Winfrey", "U2", "Tiger Woods", "Steven Spielberg", "Howard Stern", "50 Cent", "Cast of the Sopranos", "Dan Brown", "Bruce Springsteen", "Donald Trump", "Muhammad Ali", "Paul McCartney", "George Lucas", "Elton John", "David Letterman", "Phil Mickelson", "J.K Rowling", "Brad Pritt", "Peter Jackson", "Dr. Phil McGraw", "Jay Lenon", "Celine Dion", "Kobe Bryant")
+power_ranking <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25)
+annual_pay <- c(67, 90, 225, 110, 90, 332, 302, 41, 52, 88, 55, 44, 55, 40, 233, 34, 40, 47, 75, 25, 39, 45, 32, 40, 41)
+
+#b. Modify the power ranking and pay of J.K. Rowling.Change power ranking to 15 and pay to 90. Write the R scripts and its output.
+jk_index <- which(celebrities == 0)
+
+power_ranking[19] <- 15
+annual_pay[19] <- 90
+
+#Print the modified vectors
+print(celebrities)
+print(power_ranking)
+print(annual_pay)
+
+# c. Create an excel file from the table above and save it as csv file(PowerRanking). Import the csv file into the RStudio.
 
