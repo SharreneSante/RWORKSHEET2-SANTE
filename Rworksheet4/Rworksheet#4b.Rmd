@@ -1,0 +1,64 @@
+---
+title: "RWorksheet_Sante#4b.Rmd"
+author: "Sharrene Sante"
+date: "2023-11-08"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#1
+```{r num1}
+vectorA <- c(1,2,3,4,5)
+matrixA <- matrix(0,nrow = 5, ncol = 5)
+for (i in 1:5){
+  for (j in 1:5){
+    matrixA[i, j]<- abs(vectorA[i] - vectorA[j])
+  }
+}
+
+matrixA
+```
+#2
+```{r num2}
+num_rows <- 5
+for(i in 1:num_rows){
+  for(j in 1:i){
+    cat("*")
+  }
+  cat("\n")
+}
+```
+#3
+```{r num3}
+n <- as.numeric(readline("Enter the starting number for the Fibonacci sequence: "))
+
+a <- n
+b <- n
+
+cat(a, "")
+
+repeat{ 
+  c <- a + b
+if (c > 500 ){
+  break
+}
+cat(c, "")
+a <- b
+b <- c
+}
+cat("\n")
+```
+
+#4
+```{r num4}
+library(readr)
+Shoesize <- read_csv("/cloud/project/Rworksheet4/Shoesize.csv", show_col_types = FALSE)
+view(Shoesize)
+```
+
+
+
+
