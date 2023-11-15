@@ -1,0 +1,57 @@
+---
+title: "Practical Exam in CS 101"
+author: "Sharrene Sante"
+date: "2023-11-14"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+#1. Load the mtcars.csv dataset into the R environment.
+```{r num1}
+data("mtcars")
+mtcars
+```
+
+
+
+
+#2. How many observations does the mtcars have? How about the number of columns? List down the names of the column. Show your answer.
+```{r num 2a}
+length(mtcars)
+length(colnames(mtcars))
+colnames(mtcars)
+```
+
+
+#3. Generate a summary of the numerical variables as well as the structure of each variable in the mtcars dataset.
+```{r num3}
+library(tibble)
+head(mtcars)
+summary(mtcars)
+```
+
+#4. Create a bar chart to visualize the distribution of transmission types. Show your solution.
+```{r num 4}
+
+
+```
+
+#5. Which from the model has the highest mpg? How about the car model with the highest horsepower? Show your solution that will display the name of the model with the highest mpg and the car model with the highest horsepower
+```{r num 5}
+
+
+
+
+
+
+
+
+
+
+
+
+

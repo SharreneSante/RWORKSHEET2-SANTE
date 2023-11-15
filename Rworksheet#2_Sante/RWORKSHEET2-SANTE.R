@@ -78,15 +78,18 @@ data
 #8. Create vectors according to the table.
 
 #a. Vectors using the data in the table.
-celebrities <- c("Tom Cruise", "Rolling Stone", "Oprah Winfrey", "U2", "Tiger Woods", "Steven Spielberg", "Howard Stern", "50 Cent", "Cast of the Sopranos", "Dan Brown", "Bruce Springsteen", "Donald Trump", "Muhammad Ali", "Paul McCartney", "George Lucas", "Elton John", "David Letterman", "Phil Mickelson", "J.K Rowling", "Brad Pritt", "Peter Jackson", "Dr. Phil McGraw", "Jay Lenon", "Celine Dion", "Kobe Bryant")
+power_ranking <- c(1:25)
+celeb <- c("Tom Cruise", "Rolling Stone", "Oprah Winfrey", "U2", "Tiger Woods", "Steven Spielberg", "Howard Stern", "50 Cent", "Cast of the Sopranos", "Dan Brown", "Bruce Springsteen", "Donald Trump", "Muhammad Ali", "Paul McCartney", "George Lucas", "Elton John", "David Letterman", "Phil Mickelson", "J.K Rowling", "Brad Pritt", "Peter Jackson", "Dr. Phil McGraw", "Jay Lenon", "Celine Dion", "Kobe Bryant")
 power_ranking <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25)
 annual_pay <- c(67, 90, 225, 110, 90, 332, 302, 41, 52, 88, 55, 44, 55, 40, 233, 34, 40, 47, 75, 25, 39, 45, 32, 40, 41)
+PowerRanking <- data.frame(power_ranking, celeb, annual_pay)
+PowerRanking
 
 #b. Modify the power ranking and pay of J.K. Rowling.Change power ranking to 15 and pay to 90. Write the R scripts and its output.
-jk_index <- which(celebrities == 0)
-
 power_ranking[19] <- 15
+power_ranking
 annual_pay[19] <- 90
+annual_pay
 
 #Print the modified vectors
 print(celebrities)
@@ -94,4 +97,48 @@ print(power_ranking)
 print(annual_pay)
 
 # c. Create an excel file from the table above and save it as csv file(PowerRanking). Import the csv file into the RStudio.
+library(readr)
+forbesmagazine <- read_csv("forbesmagazine.csv", show_col_types = FALSE)
+View(forbesmagazine)
+
+#9.
+#a.
+library(readxl)
+hotels_vienna <- read_excel("hotels-vienna.xlsx")
+View(hotels_vienna)
+
+#b.
+dimensions <- dim((hotels_vienna))
+dimensions
+
+#c.
+selected_columns <- hotels_vienna [, c("country", "neighbourhood", "price", "stars", "accommodation_type", "rating")]
+head(selected_columns, n = nrow(selected_columns))
+
+#d.
+save(selected_columns, file = "new.RData")
+
+#e.
+load("new.RData")
+head(selected_columns)
+tail(selected_columns)
+
+#10.
+#a.
+Vegetables <- list("cabbage", "carrots", "potato", "squash", "eggplant", "okra", "corn", "cucumber", "lettuce", "broccoli")
+Vegetables
+
+#b.
+vegetableslist <- append(Vegetables, c("cauliflower", "string beans"), after=10)
+vegetableslist
+
+#c.
+Veggie <- append(vegetableslist, c("papaya", "onion", "garlic", "pechay", "sayote"),after=5)
+Veggie
+
+#d.
+NewVeggie <- Veggie[c(-5,-10,-15)]
+NewVeggie
+
+length(NewVeggie)
 
